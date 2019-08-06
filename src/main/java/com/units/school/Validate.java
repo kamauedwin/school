@@ -11,7 +11,7 @@ import java.io.Serializable;
         "id",
         "studentName",
         "studentNumber",
-        "unit",
+        "course",
         "enrollmentKey",
         "validated"
 })
@@ -24,8 +24,8 @@ public class Validate implements Serializable {
     private String studentName;
     @JsonProperty("studentNumber")
     private String studentNumber;
-    @JsonProperty("unit")
-    private Unit unit;
+    @JsonProperty("course")
+    private Course course;
     @JsonProperty("enrollmentKey")
     private String enrollmentKey;
     @JsonProperty("validated")
@@ -39,18 +39,18 @@ public class Validate implements Serializable {
 
     /**
      * @param id
-     * @param unit
+     * @param course
      * @param enrollmentKey
      * @param studentNumber
      * @param studentName
      * @param validated
      */
-    public Validate(long id, String studentName, String studentNumber, Unit unit, String enrollmentKey, boolean validated) {
+    public Validate(long id, String studentName, String studentNumber, Course course, String enrollmentKey, boolean validated) {
         super();
         this.id = id;
         this.studentName = studentName;
         this.studentNumber = studentNumber;
-        this.unit = unit;
+        this.course = course;
         this.enrollmentKey = enrollmentKey;
         this.validated = validated;
     }
@@ -100,18 +100,18 @@ public class Validate implements Serializable {
         return this;
     }
 
-    @JsonProperty("unit")
-    public Unit getUnit() {
-        return unit;
+    @JsonProperty("course")
+    public Course getCourse() {
+        return course;
     }
 
-    @JsonProperty("unit")
-    public void setUnit(Unit unit) {
-        this.unit = unit;
+    @JsonProperty("course")
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public Validate withUnit(Unit unit) {
-        this.unit = unit;
+    public Validate withUnit(Course course) {
+        this.course = course;
         return this;
     }
 
@@ -147,12 +147,12 @@ public class Validate implements Serializable {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("studentName", studentName).append("studentNumber", studentNumber).append("unit", unit).append("enrollmentKey", enrollmentKey).append("validated", validated).toString();
+        return new ToStringBuilder(this).append("id", id).append("studentName", studentName).append("studentNumber", studentNumber).append("course", course).append("enrollmentKey", enrollmentKey).append("validated", validated).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(unit).append(enrollmentKey).append(studentNumber).append(studentName).append(validated).toHashCode();
+        return new HashCodeBuilder().append(id).append(course).append(enrollmentKey).append(studentNumber).append(studentName).append(validated).toHashCode();
     }
 
     @Override
@@ -164,7 +164,7 @@ public class Validate implements Serializable {
             return false;
         }
         Validate rhs = ((Validate) other);
-        return new EqualsBuilder().append(id, rhs.id).append(unit, rhs.unit).append(enrollmentKey, rhs.enrollmentKey).append(studentNumber, rhs.studentNumber).append(studentName, rhs.studentName).append(validated, rhs.validated).isEquals();
+        return new EqualsBuilder().append(id, rhs.id).append(course, rhs.course).append(enrollmentKey, rhs.enrollmentKey).append(studentNumber, rhs.studentNumber).append(studentName, rhs.studentName).append(validated, rhs.validated).isEquals();
     }
 
 }

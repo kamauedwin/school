@@ -11,7 +11,7 @@ import java.io.Serializable;
         "id",
         "name"
 })
-public class Unit implements Serializable {
+public class Course implements Serializable {
 
     private final static long serialVersionUID = -3848817484314297327L;
     @JsonProperty("id")
@@ -22,14 +22,14 @@ public class Unit implements Serializable {
     /**
      * No args constructor for use in serialization
      */
-    public Unit() {
+    public Course() {
     }
 
     /**
      * @param id
      * @param name
      */
-    public Unit(long id, String name) {
+    public Course(long id, String name) {
         super();
         this.id = id;
         this.name = name;
@@ -45,7 +45,7 @@ public class Unit implements Serializable {
         this.id = id;
     }
 
-    public Unit withId(long id) {
+    public Course withId(long id) {
         this.id = id;
         return this;
     }
@@ -60,7 +60,7 @@ public class Unit implements Serializable {
         this.name = name;
     }
 
-    public Unit withName(String name) {
+    public Course withName(String name) {
         this.name = name;
         return this;
     }
@@ -80,10 +80,10 @@ public class Unit implements Serializable {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Unit) == false) {
+        if ((other instanceof Course) == false) {
             return false;
         }
-        Unit rhs = ((Unit) other);
+        Course rhs = ((Course) other);
         return new EqualsBuilder().append(id, rhs.id).append(name, rhs.name).isEquals();
     }
 
